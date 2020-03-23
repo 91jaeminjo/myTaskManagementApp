@@ -1,0 +1,29 @@
+<div class="grid " id="view-task">
+    <br />
+    <h3><b>Tasks:</b></h3>
+    <div class="row ml-3">
+        <div class="container" align="left">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let view of taskViews">
+                        <td>{{view.taskName}}</td>
+                        <td>{{view.description}}</td>
+                        <td>{{view.dueDate}}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<br>

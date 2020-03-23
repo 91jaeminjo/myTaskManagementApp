@@ -1,0 +1,27 @@
+<h4><b>Enter New Task:</b></h4>
+<div class="grid ">
+    <div class="row ml-3">
+        <div class="col-sm-3 m-2">
+
+            <form [formGroup]="taskForm" (ngSubmit)="onTaskSubmit()">
+
+                <label for="taskName">Task Name</label>
+                <input class="form-control" type="text" formControlName="taskName">
+
+                <label for="description">Description</label>
+                <input class="form-control" type="text" formControlName="description">
+                <br>
+                <label for="dueDate">Due Date</label>
+                <br>
+                <mat-form-field>
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="dueDate" formControlName="dueDate">
+                    <mat-datepicker-toggle matSuffix [for]="dueDate"></mat-datepicker-toggle>
+                    <mat-datepicker #dueDate></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <button type="submit" [disabled]="!taskForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
