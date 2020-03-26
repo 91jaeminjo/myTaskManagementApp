@@ -22,16 +22,32 @@ public class TaskController {
 	
 	@ResponseBody
 	@GetMapping(value="/Task")
-	public List<Task> showAllTasks(){
-		return taskService.findAll(); 
+	public List<Task> showTasks(){
+		return taskService.findTasks(); 
 	}
 	
 	@ResponseBody
 	@PostMapping(value="/Task")
 	public Task addTask(@RequestBody Task task){
 		return taskService.addTask(task); 
+	}	
+	
+	@ResponseBody
+	@PostMapping(value="/Task/Complete")
+	public Task markComplete(@RequestBody Task task){
+		return taskService.markComplete(task); 
 	}
 	
+	@ResponseBody
+	@PostMapping(value="/Task/Incomplete")
+	public Task markIncomplete(@RequestBody Task task){
+		return taskService.markIncomplete(task); 
+	}
 	
+	@ResponseBody
+	@PostMapping(value="/Task/Delete")
+	public Task delete(@RequestBody Task task){
+		return taskService.delete(task); 
+	}
 	
 }

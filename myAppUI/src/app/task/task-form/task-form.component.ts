@@ -34,6 +34,7 @@ export class TaskFormComponent implements OnInit {
   onTaskSubmit(){
     console.log("inside submit")
     this.addTask()
+    this.taskForm.reset();
   }
 
 }

@@ -9,6 +9,8 @@
                         <th>Task</th>
                         <th>Description</th>
                         <th>Due Date</th>
+                        <th>Status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,6 +19,19 @@
                         <td>{{view.taskName}}</td>
                         <td>{{view.description}}</td>
                         <td>{{view.dueDate}}</td>
+                        <td [ngSwitch]="view.isComplete">
+                            <div *ngSwitchCase="true">complete</div>
+                            <div *ngSwitchCase="false">incomplete</div>
+                            <div *ngSwitchCase="null">incomplete</div>
+                        </td>
+                        <td [ngSwitch]="view.isComplete">
+                            <button *ngSwitchCase="true" (click)="markIncomplete(view)">Mark Incomplete</button>
+                            <button *ngSwitchCase="false" (click)="markComplete(view)">Mark Complete</button>
+                            <button *ngSwitchCase="null" (click)="markComplete(view)">Mark Complete</button>
+                        </td>
+                        <td> 
+                            <button (click)="delete(view)">Delete</button>
+                        </td>
                     </tr>
 
 

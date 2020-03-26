@@ -9,6 +9,7 @@ import { TaskService } from '../task.service';
 export class TaskComponent implements OnInit {
 
   taskViews
+  completedTasks
   constructor(private taskService: TaskService) { 
 
   }
@@ -20,4 +21,25 @@ export class TaskComponent implements OnInit {
     })
   }
 
+  markComplete(task){
+    this.taskService.markTaskComplete(task)
+      .subscribe((data: any) => {
+        console.log("inside task form: ", data)
+        this.taskService.showTasks()
+      })
+  }
+  markIncomplete(task){
+    this.taskService.markTaskIncomplete(task)
+      .subscribe((data: any) => {
+        console.log("inside task form: ", data)
+        this.taskService.showTasks()
+      })
+  }
+  delete(task){
+    this.taskService.deleteTask(task)
+      .subscribe((data: any) => {
+        console.log("inside task form: ", data)
+        this.taskService.showTasks()
+      })
+  }
 }

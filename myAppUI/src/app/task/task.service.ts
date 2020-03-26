@@ -24,6 +24,18 @@ export class TaskService {
     });
   }
 
+  markTaskComplete(task){
+    return this.http.post(this.taskUrl + "/Complete", task)
+  }
+
+  markTaskIncomplete(task) {
+    return this.http.post(this.taskUrl + "/Incomplete", task)
+  }
+
+  deleteTask(task){
+    return this.http.post(this.taskUrl + "/Delete", task)
+  }
+
   saveTask(task){
     return this.http.post(this.taskUrl,task)
   }

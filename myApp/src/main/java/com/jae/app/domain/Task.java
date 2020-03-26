@@ -1,5 +1,7 @@
 package com.jae.app.domain;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,11 +16,11 @@ public class Task {
 	@Column(name="taskName")
 	String taskName;
 	@Column(name="originationTime")
-	String originationTime;
+	Date originationTime;
 	@Column(name="completionTime")
-	String completionTime;
+	Date completionTime;
 	@Column(name="dueDate")
-	String dueDate;
+	Date dueDate;
 	@Column(name="description")
 	String description;
 	@Column(name="isComplete")
@@ -35,22 +37,22 @@ public class Task {
 	public void setTaskName(String taskName) {
 		this.taskName = taskName;
 	}
-	public String getOriginationTime() {
+	public Date getOriginationTime() {
 		return originationTime;
 	}
-	public void setOriginationTime(String originationTime) {
+	public void setOriginationTime(Date originationTime) {
 		this.originationTime = originationTime;
 	}
-	public String getCompletionTime() {
+	public Date getCompletionTime() {
 		return completionTime;
 	}
-	public void setCompletionTime(String completionTime) {
+	public void setCompletionTime(Date completionTime) {
 		this.completionTime = completionTime;
 	}
-	public String getDueDate() {
+	public Date getDueDate() {
 		return dueDate;
 	}
-	public void setDueDate(String dueDate) {
+	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
 	}
 	public String getDescription() {
@@ -68,7 +70,7 @@ public class Task {
 	public Task() {
 	}
 	
-	public Task(Long id, String taskName, String originationTime, String completionTime, String description,
+	public Task(Long id, String taskName, Date originationTime, Date completionTime, String description,
 			Boolean isComplete) {
 		super();
 		this.id = id;
