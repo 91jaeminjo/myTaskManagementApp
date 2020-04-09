@@ -9,10 +9,12 @@ import { TaskService } from '../task.service';
 })
 export class TaskFormComponent implements OnInit {
 
+  categories
   constructor(private taskService: TaskService) { }
 
   taskForm = new FormGroup({
     taskName: new FormControl('', Validators.required),
+    category: new FormControl('remind'),
     originationTime: new FormControl(),
     completionTime: new FormControl(),
     dueDate: new FormControl(),
@@ -20,13 +22,22 @@ export class TaskFormComponent implements OnInit {
     isComplete: new FormControl()
   });
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getCategories()
+  }
+
+  getCategories(){
+    this.taskService.fetchCategories()
+    .subscribe((data:any)=>{
+      console.log("categories: ")
+      this.categories=data;
+    })
   }
 
   addTask(){
     this.taskService.saveTask(this.taskForm.value)
     .subscribe((data:any)=>{
-      console.log("inside task form: ",data)
+      console.log("inside task form")
       this.taskService.showTasks()
     })
   }

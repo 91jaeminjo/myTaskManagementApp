@@ -8,6 +8,15 @@
                 <label for="taskName">Task Name</label>
                 <input class="form-control" type="text" formControlName="taskName">
 
+                <label for="category">Category</label>
+                
+                <select class="form-control" formControlName="category">
+                    <option [ngValue]="null" disabled>Select task's category</option>
+                    <option *ngFor="let category of categories" [ngValue]="category">
+                        {{category.category}}
+                    </option>
+                </select>
+                <br>
                 <label for="description">Description</label>
                 <input class="form-control" type="text" formControlName="description">
                 <br>

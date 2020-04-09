@@ -11,4 +11,5 @@ public interface TaskService {
 	public Task markIncomplete(Task task);
 	public Task delete(Task task);
 	public List<Task> findTasks();
+	public List<Task> findTasksByCategory(Integer categoryId);
 }

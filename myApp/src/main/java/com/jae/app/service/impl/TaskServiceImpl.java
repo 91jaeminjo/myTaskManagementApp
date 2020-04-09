@@ -59,5 +59,10 @@ public class TaskServiceImpl implements TaskService{
 		return null;
 	}
 
+	@Override
+	public List<Task> findTasksByCategory(Integer categoryId) {
+		return taskRepository.findTasksByCategoryId(categoryId);
+	}
+
 
 }

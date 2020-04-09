@@ -7,14 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Task {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Long id;
+	Integer id;
 	@Column(name="taskName")
 	String taskName;
+	@ManyToOne
+	@JoinColumn(name="categoryId")
+	Category category;
 	@Column(name="originationTime")
 	Date originationTime;
 	@Column(name="completionTime")
@@ -25,10 +30,10 @@ public class Task {
 	String description;
 	@Column(name="isComplete")
 	Boolean isComplete;
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getTaskName() {
@@ -36,6 +41,12 @@ public class Task {
 	}
 	public void setTaskName(String taskName) {
 		this.taskName = taskName;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	public Date getOriginationTime() {
 		return originationTime;
@@ -69,18 +80,16 @@ public class Task {
 	}	
 	public Task() {
 	}
-	
-	public Task(Long id, String taskName, Date originationTime, Date completionTime, String description,
-			Boolean isComplete) {
+	public Task(Integer id, String taskName, com.jae.app.domain.Category category, Date originationTime,
+			Date completionTime, Date dueDate, String description, Boolean isComplete) {
 		super();
 		this.id = id;
 		this.taskName = taskName;
+		this.category = category;
 		this.originationTime = originationTime;
 		this.completionTime = completionTime;
+		this.dueDate = dueDate;
 		this.description = description;
 		this.isComplete = isComplete;
-	}
-	
-	
-	
+	}	
 }

@@ -8,6 +8,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class TaskService {
   
   taskUrl = "http://localhost:8080/Task"
+  categoriesUrl = "http://localhost:8080/Categories"
 
   public tasks: BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
@@ -15,6 +16,10 @@ export class TaskService {
 
   getTasks(){
     return this.http.get(this.taskUrl)
+  }
+
+  fetchCategories(){
+    return this.http.get(this.categoriesUrl)
   }
 
   showTasks(){
