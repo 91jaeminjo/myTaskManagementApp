@@ -7,10 +7,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class TaskService {
   
-  //taskUrl = "http://localhost:8080/Task"
-  taskUrl = "http://http://54.173.130.27/Task"
-  //categoriesUrl = "http://localhost:8080/Categories"
-  categoriesUrl = "http://54.173.130.27/Categories"
+  taskUrl = "http://localhost:8080/Task"
+  //taskUrl = "http://http://54.173.130.27/Task"
+  categoriesUrl = "http://localhost:8080/Categories"
+  //categoriesUrl = "http://54.173.130.27/Categories"
 
   public tasks: BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
