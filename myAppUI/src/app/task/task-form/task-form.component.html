@@ -1,13 +1,13 @@
 <h4><b>Enter New Task:</b></h4>
 <div class="grid ">
-    <div class="row ml-3">
-        <div class="col-sm-3 m-2">
+    <div class="row">
+        <div class="col-sm-10 col-lg-7">
 
             <form [formGroup]="taskForm" (ngSubmit)="onTaskSubmit()">
 
                 <label for="taskName">Task Name</label>
                 <input class="form-control" type="text" formControlName="taskName">
-
+                <br />
                 <label for="category">Category</label>
                 
                 <select class="form-control" formControlName="category">
@@ -16,6 +16,13 @@
                         {{category.category}}
                     </option>
                 </select>
+                <button type="button" class="btn btn-secondary" (click)="toggleCategoryDisplay()">Add new category</button>
+                <div [style.visibility]="display?'visible':'hidden'">
+                    <label for="newCategory">Category</label>
+                    <input class="form-control" type="text" placeholder="Enter New Category" formControlName="newCategory">
+                    <button type="button" class="btn btn-secondary" (click)="addCategory()">Add</button>
+                </div>
+                
                 <br>
                 <label for="description">Description</label>
                 <input class="form-control" type="text" formControlName="description">

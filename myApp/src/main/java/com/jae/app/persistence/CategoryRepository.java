@@ -18,5 +18,6 @@ public interface CategoryRepository extends JpaRepository <Category, Long>{
 	Category save(Category category);
 	
 	
+	void delete(Category category);
 	
 }

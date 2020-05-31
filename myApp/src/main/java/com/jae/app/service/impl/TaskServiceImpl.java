@@ -42,6 +42,7 @@ public class TaskServiceImpl implements TaskService{
 	@Override
 	public Task markComplete(Task task) {
 		task.setIsComplete(true);
+		task.setCompletionTime(Date.valueOf(LocalDate.now()));
 		taskRepository.save(task);
 		return task;
 	}
@@ -49,6 +50,7 @@ public class TaskServiceImpl implements TaskService{
 	@Override
 	public Task markIncomplete(Task task) {
 		task.setIsComplete(false);
+		task.setCompletionTime(null);
 		taskRepository.save(task);
 		return task;
 	}

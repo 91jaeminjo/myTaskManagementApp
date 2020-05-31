@@ -7,8 +7,15 @@
 nav{
     background-color: #2c3e50;
     min-height: 10vh;
+    width:100vw;
 }
 
+.navbar-nav{
+    display:flex;
+    justify-content: space-around;
+    width:25%;
+
+}
 .navbar-brand{
     color: rgb(196, 196, 196);
     letter-spacing: 3px;
@@ -22,6 +29,9 @@ nav{
     text-decoration: none;
     letter-spacing: 3px;
     font-size:20px;
+    &:hover{
+        color:white;
+    }
 }
 
 
