@@ -22,4 +22,4 @@ For front-end:
   - run `ng serve` (options to specify host and port: example --host 0.0.0.0 --port 80) to run the front end Angular application
   - open `localhost:4200` (other host and port specified in the command above) from a web browser
 
-The app is deployed in AWS. The link to the project can be found in my portfolio: 91jaeminjo.github.io/portfolio
+The app is deployed in AWS. The link to the project can be found in my portfolio: https://91jaeminjo.github.io/portfolio
