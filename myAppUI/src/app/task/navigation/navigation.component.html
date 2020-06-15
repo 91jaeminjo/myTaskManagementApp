@@ -1,0 +1,20 @@
+<nav class="navbar navbar-dark navbar-expand-lg">
+    <a class="navbar-brand ml-5" href="#">
+        <h2><b>Tasks</b></h2>
+    </a>
+
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon mr-4"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+        <ul class="navbar-nav ml-auto mr-4">
+            <li class="nav-item">
+                <h3><a class="nav-link" href="#">Home</a></h3>
+            </li>
+            <li class="nav-item">
+                <h3><a class="nav-link" href="#">Portfolio</a></h3>
+            </li>
+        </ul>
+    </div>
+</nav>

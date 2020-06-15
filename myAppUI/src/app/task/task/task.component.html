@@ -1,0 +1,52 @@
+<div class="grid " id="view-task">
+    <br />
+    <h3><b>Tasks:</b></h3>
+    <div class="row">
+        <div class="container-fluid">
+            <table class="table table-striped">
+                <thead class="text-center">
+                    <tr>
+                        <th>Task</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-body text-left">
+
+                    <tr *ngFor="let view of taskViews">
+                        <td>{{view.taskName}}</td>
+                        <td *ngIf="view.category==null">
+                            <div></div>
+                        </td>
+                        <td *ngIf="view.category!=null">
+                            <div>{{view.category.category}}</div>
+                        </td>
+                            
+                        <td>{{view.description}}</td>
+                        <td>{{view.dueDate}}</td>
+                        <td [ngSwitch]="view.isComplete">
+                            <div *ngSwitchCase="true">complete</div>
+                            <div *ngSwitchCase="false">incomplete</div>
+                            <div *ngSwitchCase="null">incomplete</div>
+                        </td>
+                        <td [ngSwitch]="view.isComplete">
+                            <button class="btn btn-outline-secondary btn-block" *ngSwitchCase="true" (click)="markIncomplete(view)">Mark Incomplete</button>
+                            <button class="btn btn-outline-secondary btn-block" *ngSwitchCase="false" (click)="markComplete(view)">Mark Complete</button>
+                            <button class="btn btn-outline-secondary btn-block" *ngSwitchCase="null" (click)="markComplete(view)">Mark Complete</button>
+                        </td>
+                        <td> 
+                            <button class="btn btn-outline-secondary btn-block" (click)="delete(view)">Delete</button>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<br>
