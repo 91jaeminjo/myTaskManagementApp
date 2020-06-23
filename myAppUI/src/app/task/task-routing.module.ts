@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from "../auth/auth.guard";
+
+export const routes: Routes = [{path:'', component:HomeComponent},
+  { path: 'task', component: HomeComponent }];
 
 
-const routes: Routes = [{path:'', component:HomeComponent}];
+export const routing: ModuleWithProviders = 
+RouterModule.forChild(routes)
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class TaskRoutingModule { }
+//export class TaskRoutingModule { }

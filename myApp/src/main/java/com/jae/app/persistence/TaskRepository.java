@@ -15,7 +15,13 @@ public interface TaskRepository extends JpaRepository <Task, Long>{
 	
 	@SuppressWarnings("unchecked")
 	Task save(Task task);
+
+	/* To do in future
+	 * List<Task> findByCompletionDateIsNull(); 
+	 * List<Task> findByCompletionDateIsNotNull();
+	 */
 	List<Task> findTasksByCategoryId(Integer categoryId);
+	
 	
 	
 }

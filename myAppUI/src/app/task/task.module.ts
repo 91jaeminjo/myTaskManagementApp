@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TaskRoutingModule } from './task-routing.module';
+
 import { HomeComponent } from './home/home.component';
 import { TaskComponent } from './task/task.component';
 import { TaskFormComponent } from './task-form/task-form.component';
@@ -12,13 +12,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { NavigationComponent } from './navigation/navigation.component';
+import { routing } from './task-routing.module';
+
 
 
 @NgModule({
   declarations: [HomeComponent, TaskComponent, TaskFormComponent, NavigationComponent],
   imports: [
     CommonModule,
-    TaskRoutingModule,
+    routing,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,

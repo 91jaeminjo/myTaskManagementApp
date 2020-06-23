@@ -13,7 +13,7 @@ nav{
 .navbar-nav{
     display:flex;
     justify-content: space-around;
-    width:25%;
+    width:30%;
 
 }
 .navbar-brand{
@@ -24,7 +24,20 @@ nav{
 .navbar-toggler-icon{
     color:rgb(196, 196, 196);
 }
-.nav-item a{
+.nav-item{
+     a{
+        color:rgb(196, 196, 196);
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-size:20px;
+        cursor: pointer;
+        &:hover{
+            color:white;
+      }
+  }
+}
+
+.userdetails{    
     color:rgb(196, 196, 196);
     text-decoration: none;
     letter-spacing: 3px;
@@ -32,9 +45,8 @@ nav{
     &:hover{
         color:white;
     }
+    background-color:transparent;
 }
-
-
 
 
 

@@ -17,7 +17,11 @@
                 <tbody class="table-body text-left">
 
                     <tr *ngFor="let view of taskViews">
-                        <td>{{view.taskName}}</td>
+                        <td [ngSwitch]="view.isComplete">
+                            <div *ngSwitchCase="true"><del>{{view.taskName}}</del></div>
+                            <div *ngSwitchCase="false">{{view.taskName}}</div>
+                            <div *ngSwitchCase="null">{{view.taskName}}</div>
+                        </td>
                         <td *ngIf="view.category==null">
                             <div></div>
                         </td>
@@ -25,8 +29,16 @@
                             <div>{{view.category.category}}</div>
                         </td>
                             
-                        <td>{{view.description}}</td>
-                        <td>{{view.dueDate}}</td>
+                        <td [ngSwitch]="view.isComplete">
+                            <div *ngSwitchCase="true"><del>{{view.description}}</del></div>
+                            <div *ngSwitchCase="false">{{view.description}}</div>
+                            <div *ngSwitchCase="null">{{view.description}}</div>
+                        </td>
+                        <td [ngSwitch]="view.isComplete">
+                            <div *ngSwitchCase="true"><del>{{view.dueDate | date:"MM/dd/yyyy"}}</del></div>
+                            <div *ngSwitchCase="false">{{view.dueDate | date:"MM/dd/yyyy"}}</div>
+                            <div *ngSwitchCase="null">{{view.dueDate | date:"MM/dd/yyyy"}}</div>
+                        </td>
                         <td [ngSwitch]="view.isComplete">
                             <div *ngSwitchCase="true">complete</div>
                             <div *ngSwitchCase="false">incomplete</div>
