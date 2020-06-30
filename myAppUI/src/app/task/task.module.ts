@@ -13,11 +13,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { NavigationComponent } from './navigation/navigation.component';
 import { routing } from './task-routing.module';
+import { LandingComponent } from './landing/landing.component';
+
 
 
 
 @NgModule({
-  declarations: [HomeComponent, TaskComponent, TaskFormComponent, NavigationComponent],
+  declarations: [HomeComponent, TaskComponent, TaskFormComponent, NavigationComponent,LandingComponent],
   imports: [
     CommonModule,
     routing,

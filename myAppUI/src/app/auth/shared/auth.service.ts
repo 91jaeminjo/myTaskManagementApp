@@ -19,7 +19,7 @@ export class AuthService {
     username: this.getUserName(),
   };
   //authUrl = "http://localhost:8080/api/auth"
-  authUrl = "http://54.173.130.27/api/auth"
+  authUrl = "http://3.93.149.221/api/auth"
   constructor(
     private httpClient: HttpClient,
     private localStorage: LocalStorageService

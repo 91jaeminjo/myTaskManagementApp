@@ -1,10 +1,12 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from "./auth/auth.guard";
+import { LandingComponent } from './task/landing/landing.component';
 
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: '', pathMatch: 'full', redirectTo:'landing' },
+  { path: 'landing', component: LandingComponent },
   {
     path: 'signup',
     loadChildren: './auth/auth.module#AuthModule',
@@ -20,7 +22,5 @@ export const routes: Routes = [
   }
 ];
 
-
-//export class AppRoutingModule { }
 export const routing: ModuleWithProviders = 
 RouterModule.forRoot(routes)

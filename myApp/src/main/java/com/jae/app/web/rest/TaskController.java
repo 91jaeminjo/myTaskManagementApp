@@ -1,6 +1,6 @@
 package com.jae.app.web.rest;
 
-import java.time.Instant;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,6 @@ public class TaskController {
 	@ResponseBody
 	@GetMapping(value="/Task")
 	public List<Task> showTasks(){
-		System.out.println("Instant.now() = "+Instant.now());
 		return taskService.findTasks(); 
 	}
 	

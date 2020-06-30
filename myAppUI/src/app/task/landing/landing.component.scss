@@ -1,0 +1,13 @@
+.greeting{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    cursor:default;
+    &:hover{
+        color:rgb(105, 105, 105);
+    }
+}
+.landing{
+    min-height: 100vh;
+}

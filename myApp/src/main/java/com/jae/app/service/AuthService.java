@@ -49,7 +49,7 @@ public class AuthService {
 		mailService.sendMail(new NotificationEmail("Please Activate your Account", user.getEmail(),
 				"Thank you for signing up to Spring Reddit, "
 						+ "please click on the below url to activate your account : "
-						+ "http://54.173.130.27/api/auth/accountVerification/" + token));
+						+ "http://3.93.149.221/api/auth/accountVerification/" + token));
 	}
 
 	@Transactional(readOnly = true)
@@ -92,7 +92,6 @@ public class AuthService {
 		authenticationResponse.setRefreshToken(refreshTokenService.generateRefreshToken().getToken());
 		authenticationResponse.setExpiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()));
 		authenticationResponse.setUsername(loginRequest.getUsername());
-
 		return authenticationResponse;
 	}
 
