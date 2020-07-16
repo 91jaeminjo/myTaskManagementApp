@@ -8,9 +8,9 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class TaskService {
   
   //taskUrl = "http://localhost:8080/Task"
-  taskUrl = "http://http://54.173.130.27/Task"
+  taskUrl = "http://3.93.149.221/Task"
   //categoriesUrl = "http://localhost:8080/Categories"
-  categoriesUrl = "http://54.173.130.27/Categories"
+  categoriesUrl = "http://3.93.149.221/Categories"
 
   public tasks: BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
@@ -32,11 +32,11 @@ export class TaskService {
   }
 
   markTaskComplete(task){
-    return this.http.post(this.taskUrl + "/Complete", task)
+    return this.http.post(this.taskUrl + "/MarkComplete", task)
   }
 
   markTaskIncomplete(task) {
-    return this.http.post(this.taskUrl + "/Incomplete", task)
+    return this.http.post(this.taskUrl + "/MarkIncomplete", task)
   }
 
   deleteTask(task){

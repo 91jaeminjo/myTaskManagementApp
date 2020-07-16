@@ -36,7 +36,7 @@ export class TaskFormComponent implements OnInit {
     this.taskService.fetchCategories()
     .subscribe((data:any)=>{
       this.categories=data;
-      console.log("categories: ", data)
+      
       this.uncategorizedFound = !data.every(element => {
         element.category != "uncategorized"
       })
@@ -58,7 +58,7 @@ export class TaskFormComponent implements OnInit {
     this.taskService.fetchCategories()
       .subscribe((data: any) => {
         this.categories = data;
-        console.log("categories: ", data)
+        
       })
   }
 
@@ -84,7 +84,7 @@ export class TaskFormComponent implements OnInit {
     this.taskForm.value.category = newValue;
     this.taskService.addNewCategory(newValue)
       .subscribe((data: any) => {
-        console.log("inside addCategory")
+        
         this.getCategories()
       })
     }
@@ -112,15 +112,14 @@ export class TaskFormComponent implements OnInit {
     else{
       console.log("taskform value: ",this.taskForm.value)
     }
-    //this.taskService.saveTask(this.taskForm.value)
-    //.subscribe((data:any)=>{
-    //  console.log("inside task form")
-    //  this.taskService.showTasks()
-    //})
+    this.taskService.saveTask(this.taskForm.value)
+    .subscribe((data:any)=>{
+    
+      this.taskService.showTasks()
+    })
   }
 
   onTaskSubmit(){
-    console.log("inside submit")
     this.addTask()
     this.taskForm.reset();
   }

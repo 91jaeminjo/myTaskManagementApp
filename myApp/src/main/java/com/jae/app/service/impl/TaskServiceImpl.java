@@ -29,6 +29,15 @@ public class TaskServiceImpl implements TaskService{
 		return taskRepository.findAll();
 	}
 
+	/* To do in future
+	 * 
+	 * @Override public List<Task> findCompletedTasks() { return
+	 * taskRepository.findByCompletionDateIsNotNull(); }
+	 * 
+	 * @Override public List<Task> findIncompleteTasks() { return
+	 * taskRepository.findByCompletionDateIsNull(); }
+	 */
+	
 	@Override
 	public Task addTask(Task task) {
 
@@ -65,6 +74,4 @@ public class TaskServiceImpl implements TaskService{
 	public List<Task> findTasksByCategory(Integer categoryId) {
 		return taskRepository.findTasksByCategoryId(categoryId);
 	}
-
-
 }

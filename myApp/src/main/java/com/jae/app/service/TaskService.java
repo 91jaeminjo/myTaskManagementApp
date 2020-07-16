@@ -12,4 +12,8 @@ public interface TaskService {
 	public Task delete(Task task);
 	public List<Task> findTasks();
 	public List<Task> findTasksByCategory(Integer categoryId);
+	/*
+	 * public List<Task> findCompletedTasks(); 
+	 * public List<Task> findIncompleteTasks();
+	 */
 }
